@@ -88,13 +88,15 @@ def mock_localtime(f, _localtime=time.localtime):
     def generate_expected(self, backend):
         time.localtime = _frozen_localtime
         os.environ['TZ'] = _frozentz
-        time.tzset()
+        if not os.name == 'os2':
+          time.tzset()
         try:
             return f(self, backend)
         finally:
             time.localtime = _localtime
             del os.environ['TZ']
-            time.tzset()
+            if not os.name == 'os2':
+              time.tzset()
     return generate_expected
 
 
