@@ -5865,7 +5865,7 @@ APP_FILE = None             # This file's full path.
 APP_DIR = None              # This file's directory.
 USER_DIR = None             # ~/.asciidoc
 # Global configuration files directory (set by Makefile build target).
-CONF_DIR = '/etc/asciidoc'
+CONF_DIR = '/@unixroot/etc/asciidoc'
 HELP_FILE = 'help.conf'     # Default (English) help file.
 
 # Globals
