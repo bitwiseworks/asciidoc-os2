@@ -208,7 +208,10 @@ class AsciiDocTest(object):
         infile = self.source
         outfile = StringIO.StringIO()
         asciidoc.execute(infile, outfile, backend)
-        return outfile.getvalue().splitlines()
+#        return outfile.getvalue().splitlines()
+        result = outfile.getvalue().splitlines()
+        result = [ s.rstrip() for s in result ]
+        return result
 
     def update_expected(self, backend):
         """
